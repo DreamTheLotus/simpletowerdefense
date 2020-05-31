@@ -1,0 +1,845 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000000005fc6c3a7, pid=5604, tid=0x0000000000007c68
+#
+# JRE version: OpenJDK Runtime Environment (8.0_212-b04) (build 1.8.0_212-3-redhat-b04)
+# Java VM: OpenJDK 64-Bit Server VM (25.212-b04 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0x12c3a7]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000209dc000):  JavaThread "AWT-EventQueue-0" [_thread_in_vm, id=31848, stack(0x0000000022290000,0x0000000022390000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000000000
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00000000209dc000, RCX=0x0000000000000c00, RDX=0x000000002238dcf0
+RSP=0x000000002238d820, RBP=0x0000000000000000, RSI=0x000000002238dcf0, RDI=0x00000000209dc201
+R8 =0x0000000000000000, R9 =0x000000076c6c56c0, R10=0x000000000000000a, R11=0x0000000060372d58
+R12=0x000000002238dd28, R13=0x0000000000000000, R14=0x0000000000db1ba0, R15=0x00000000209dc268
+RIP=0x000000005fc6c3a7, EFLAGS=0x0000000000010206
+
+Top of Stack: (sp=0x000000002238d820)
+0x000000002238d820:   0000f5416a230b0e 00000000209dc268
+0x000000002238d830:   0000000000000000 fffffffffffffffe
+0x000000002238d840:   00000000209dc268 00007ff975754943
+0x000000002238d850:   000000002238dcf0 000000002238d9f0
+0x000000002238d860:   000000002238dcf0 00007ff9983788de
+0x000000002238d870:   fffffffffffffffe 000000002238db30
+0x000000002238d880:   00000000209dc268 00007ff9983790c0
+0x000000002238d890:   000000002238dcf0 000000002238dcf0
+0x000000002238d8a0:   0000055100000a00 0000000000000000
+0x000000002238d8b0:   0000f54100010004 00007ff9a5cb1070
+0x000000002238d8c0:   00007ff9a5cb106a 00007ff9a5cb1064
+0x000000002238d8d0:   00007ff9a5cb105e 00007ff9a5cb1058
+0x000000002238d8e0:   000000002daf0b50 00007ff998343029
+0x000000002238d8f0:   0000000000df6180 000000002238d920
+0x000000002238d900:   000000002238dc00 000000002daf0b50
+0x000000002238d910:   0000000000000079 000000001e328a10 
+
+Instructions: (pc=0x000000005fc6c3a7)
+0x000000005fc6c387:   00 00 00 30 74 08 48 8b cb e8 0b 2b 10 00 c7 83
+0x000000005fc6c397:   e0 02 00 00 06 00 00 00 40 b7 01 48 85 f6 74 60
+0x000000005fc6c3a7:   48 8b 4d 00 40 32 ff e8 9d 96 f1 ff 48 8b d0 48
+0x000000005fc6c3b7:   85 c0 74 4c 40 38 3d ef 59 70 00 4c 8b 06 74 16 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x00000000209dc000 is a thread
+RCX=0x0000000000000c00 is an unknown value
+RDX=0x000000002238dcf0 is pointing into the stack for thread: 0x00000000209dc000
+RSP=0x000000002238d820 is pointing into the stack for thread: 0x00000000209dc000
+RBP=0x0000000000000000 is an unknown value
+RSI=0x000000002238dcf0 is pointing into the stack for thread: 0x00000000209dc000
+RDI=0x00000000209dc201 is an unknown value
+R8 =0x0000000000000000 is an unknown value
+R9 =0x000000076c6c56c0 is an oop
+java.awt.Rectangle 
+ - klass: 'java/awt/Rectangle'
+R10=0x000000000000000a is an unknown value
+R11=0x0000000060372d58 is an unknown value
+R12=0x000000002238dd28 is pointing into the stack for thread: 0x00000000209dc000
+R13=0x0000000000000000 is an unknown value
+R14=0x0000000000db1ba0 is an unknown value
+R15=0x00000000209dc268 is an unknown value
+
+
+Stack: [0x0000000022290000,0x0000000022390000],  sp=0x000000002238d820,  free space=1014k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.cef.browser.CefBrowser_N.N_CreateBrowser(Lorg/cef/handler/CefClientHandler;JLjava/lang/String;ZZLjava/awt/Component;Lorg/cef/browser/CefRequestContext;)Z+0
+j  org.cef.browser.CefBrowser_N.createBrowser(Lorg/cef/handler/CefClientHandler;JLjava/lang/String;ZZLjava/awt/Component;Lorg/cef/browser/CefRequestContext;)V+32
+j  org.cef.browser.CefBrowserWr.createBrowserIfRequired(Z)Z+107
+j  org.cef.browser.CefBrowserWr.access$000(Lorg/cef/browser/CefBrowserWr;Z)Z+2
+j  org.cef.browser.CefBrowserWr$1$1.run()V+8
+j  java.awt.event.InvocationEvent.dispatch()V+47
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+21
+j  java.awt.EventQueue.access$500(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$3.run()Ljava/lang/Void;+32
+j  java.awt.EventQueue$3.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+18
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+46
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)V+140
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+35
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000020aa9800 JavaThread "TimerQueue" daemon [_thread_blocked, id=23788, stack(0x000000002e5a0000,0x000000002e6a0000)]
+  0x00000000212aa800 JavaThread "D3D Screen Updater" daemon [_thread_blocked, id=29604, stack(0x000000002e4a0000,0x000000002e5a0000)]
+  0x0000000020b0c800 JavaThread "Thread-4" [_thread_blocked, id=24924, stack(0x000000002e1e0000,0x000000002e2e0000)]
+  0x000000000301e000 JavaThread "DestroyJavaVM" [_thread_blocked, id=22576, stack(0x0000000002ea0000,0x0000000002fa0000)]
+=>0x00000000209dc000 JavaThread "AWT-EventQueue-0" [_thread_in_vm, id=31848, stack(0x0000000022290000,0x0000000022390000)]
+  0x0000000020ae7800 JavaThread "AWT-Windows" daemon [_thread_in_native, id=27864, stack(0x00000000210c0000,0x00000000211c0000)]
+  0x0000000020ae7000 JavaThread "AWT-Shutdown" [_thread_blocked, id=34872, stack(0x0000000020fc0000,0x00000000210c0000)]
+  0x0000000020ae6000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=17824, stack(0x0000000020ec0000,0x0000000020fc0000)]
+  0x000000001e2f7000 JavaThread "Service Thread" daemon [_thread_blocked, id=26180, stack(0x0000000020110000,0x0000000020210000)]
+  0x000000001e2d0800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=22856, stack(0x0000000020010000,0x0000000020110000)]
+  0x000000001e2d0000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=26900, stack(0x000000001ff10000,0x0000000020010000)]
+  0x000000001e2d8000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=33108, stack(0x000000001fe10000,0x000000001ff10000)]
+  0x000000001e2cf000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=5528, stack(0x000000001fd10000,0x000000001fe10000)]
+  0x000000001e2d2800 JavaThread "Monitor Ctrl-Break" daemon [_thread_in_native, id=26216, stack(0x000000001fc10000,0x000000001fd10000)]
+  0x000000001e1f3800 JavaThread "Attach Listener" daemon [_thread_blocked, id=30596, stack(0x000000001fb10000,0x000000001fc10000)]
+  0x000000001e1f2800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=21768, stack(0x000000001fa10000,0x000000001fb10000)]
+  0x000000001e180800 JavaThread "Finalizer" daemon [_thread_blocked, id=24612, stack(0x000000001f8b0000,0x000000001f9b0000)]
+  0x000000001e179000 JavaThread "Reference Handler" daemon [_thread_blocked, id=26072, stack(0x000000001f7b0000,0x000000001f8b0000)]
+
+Other Threads:
+  0x000000001cf8d000 VMThread [stack: 0x000000001f6b0000,0x000000001f7b0000] [id=30592]
+  0x000000001e2f8000 WatcherThread [stack: 0x0000000020210000,0x0000000020310000] [id=16140]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000006c0c00000, size: 4084 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 76288K, used 27757K [0x000000076af00000, 0x0000000770400000, 0x00000007c0000000)
+  eden space 65536K, 42% used [0x000000076af00000,0x000000076ca1b7d8,0x000000076ef00000)
+  from space 10752K, 0% used [0x000000076f980000,0x000000076f980000,0x0000000770400000)
+  to   space 10752K, 0% used [0x000000076ef00000,0x000000076ef00000,0x000000076f980000)
+ ParOldGen       total 175104K, used 0K [0x00000006c0c00000, 0x00000006cb700000, 0x000000076af00000)
+  object space 175104K, 0% used [0x00000006c0c00000,0x00000006c0c00000,0x00000006cb700000)
+ Metaspace       used 11579K, capacity 11856K, committed 12160K, reserved 1060864K
+  class space    used 1252K, capacity 1371K, committed 1408K, reserved 1048576K
+
+Card table byte_map: [0x0000000012690000,0x0000000012e90000] byte_map_base: 0x000000000f08a000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006037bec0
+ Begin Bits: [0x0000000013df0000, 0x0000000017dc0000)
+ End Bits:   [0x0000000017dc0000, 0x000000001bd90000)
+
+Polling page: 0x0000000000d10000
+
+CodeCache: size=245760Kb used=2771Kb max_used=2771Kb free=242988Kb
+ bounds [0x00000000032d0000, 0x0000000003590000, 0x00000000122d0000]
+ total_blobs=1142 nmethods=668 adapters=388
+ compilation: enabled
+
+Compilation events (250 events):
+Event: 1.869 Thread 0x000000001e2d0800 nmethod 537 0x000000000352d990 code [0x000000000352db20, 0x000000000352dfd8]
+Event: 1.869 Thread 0x000000001e2d0800  538       3       java.util.ArrayList$Itr::hasNext (20 bytes)
+Event: 1.869 Thread 0x000000001e2d0800 nmethod 538 0x000000000352e0d0 code [0x000000000352e220, 0x000000000352e3f0]
+Event: 1.869 Thread 0x000000001e2d0800  539       3       java.util.ArrayList$Itr::checkForComodification (23 bytes)
+Event: 1.869 Thread 0x000000001e2d0800 nmethod 539 0x000000000352e690 code [0x000000000352e800, 0x000000000352ea28]
+Event: 1.869 Thread 0x000000001e2d0800  541       3       java.util.ArrayList$Itr::next (66 bytes)
+Event: 1.870 Thread 0x000000001e2d0800 nmethod 541 0x000000000352eb10 code [0x000000000352ecc0, 0x000000000352f1a8]
+Event: 1.870 Thread 0x000000001e2d0800  540       1       java.util.logging.Logger::getName (5 bytes)
+Event: 1.870 Thread 0x000000001e2d0800 nmethod 540 0x000000000352f410 code [0x000000000352f560, 0x000000000352f670]
+Event: 1.871 Thread 0x000000001e2d0800  543       3       java.util.ArrayList::add (29 bytes)
+Event: 1.871 Thread 0x000000001e2d0800 nmethod 543 0x000000000352f8d0 code [0x000000000352fa80, 0x0000000003530008]
+Event: 1.871 Thread 0x000000001e2d0800  542       3       java.lang.ref.WeakReference::<init> (7 bytes)
+Event: 1.871 Thread 0x000000001e2d0800 nmethod 542 0x0000000003530490 code [0x0000000003530600, 0x00000000035308b0]
+Event: 1.874 Thread 0x000000001e2d0800  544       3       java.lang.invoke.MemberName::initResolved (53 bytes)
+Event: 1.874 Thread 0x000000001e2d0800 nmethod 544 0x0000000003531a50 code [0x0000000003531ba0, 0x0000000003531d70]
+Event: 1.885 Thread 0x000000001e2d0800  545       3       java.lang.invoke.MethodType::insertParameterTypes (106 bytes)
+Event: 1.886 Thread 0x000000001e2d0800 nmethod 545 0x0000000003531dd0 code [0x0000000003532080, 0x00000000035333a8]
+Event: 1.886 Thread 0x000000001e2d0800  546       3       java.lang.invoke.MemberName::getName (25 bytes)
+Event: 1.886 Thread 0x000000001e2d0800 nmethod 546 0x0000000003533e50 code [0x0000000003533fe0, 0x0000000003534428]
+Event: 1.890 Thread 0x000000001e2d0800  548       1       sun.misc.URLClassPath$JarLoader::access$700 (5 bytes)
+Event: 1.890 Thread 0x000000001e2d0800 nmethod 548 0x0000000003534750 code [0x00000000035348a0, 0x0000000003534990]
+Event: 1.891 Thread 0x000000001e2d0800  549       3       java.util.AbstractList::<init> (10 bytes)
+Event: 1.891 Thread 0x000000001e2d0800 nmethod 549 0x0000000003534a10 code [0x0000000003534b80, 0x0000000003534d90]
+Event: 1.891 Thread 0x000000001e2cf000  550       4       java.util.concurrent.ConcurrentHashMap::setTabAt (19 bytes)
+Event: 1.892 Thread 0x000000001e2d0800  551       3       java.util.zip.ZipEntry::<init> (146 bytes)
+Event: 1.892 Thread 0x000000001e2cf000 nmethod 550 0x0000000003537ad0 code [0x0000000003537c00, 0x0000000003537c58]
+Event: 1.892 Thread 0x000000001e2d0800 nmethod 551 0x0000000003537350 code [0x00000000035374e0, 0x0000000003537928]
+Event: 1.892 Thread 0x000000001e2d0800  552       3       java.lang.String::equalsIgnoreCase (48 bytes)
+Event: 1.892 Thread 0x000000001e2d0800 nmethod 552 0x0000000003536d50 code [0x0000000003536ec0, 0x0000000003537228]
+Event: 1.897 Thread 0x000000001e2d0800  553       3       org.cef.CefApp$7::accept (33 bytes)
+Event: 1.897 Thread 0x000000001e2d8000  554       4       java.lang.String::equalsIgnoreCase (48 bytes)
+Event: 1.897 Thread 0x000000001e2d0800 nmethod 553 0x0000000003536650 code [0x00000000035367e0, 0x0000000003536c48]
+Event: 1.902 Thread 0x000000001e2d8000 nmethod 554 0x00000000035401d0 code [0x0000000003540340, 0x00000000035409b8]
+Event: 1.903 Thread 0x000000001e2d0000 nmethod 528 0x00000000035411d0 code [0x0000000003541460, 0x0000000003544f88]
+Event: 1.904 Thread 0x000000001e2cf000  555       4       org.cef.CefApp$7::accept (33 bytes)
+Event: 1.907 Thread 0x000000001e2d0800  556       3       java.util.Arrays::copyOf (46 bytes)
+Event: 1.907 Thread 0x000000001e2d0800 nmethod 556 0x0000000003535c10 code [0x0000000003535dc0, 0x0000000003536468]
+Event: 1.911 Thread 0x000000001e2d0800  557       3       java.io.WinNTFileSystem::resolve (231 bytes)
+Event: 1.912 Thread 0x000000001e2d0800 nmethod 557 0x000000000353dad0 code [0x000000000353dda0, 0x000000000353f628]
+Event: 1.920 Thread 0x000000001e2cf000 nmethod 555 0x0000000003546b90 code [0x0000000003546d60, 0x0000000003548038]
+Event: 2.021 Thread 0x000000001e2d0800  559       3       java.io.InputStream::<init> (5 bytes)
+Event: 2.022 Thread 0x000000001e2d0800 nmethod 559 0x0000000003535490 code [0x0000000003535600, 0x00000000035357b0]
+Event: 2.022 Thread 0x000000001e2d0800  560       3       java.nio.DirectLongBufferU::get (16 bytes)
+Event: 2.022 Thread 0x000000001e2d0800 nmethod 560 0x0000000003534f90 code [0x0000000003535100, 0x0000000003535370]
+Event: 2.022 Thread 0x000000001e2d0800  561       3       java.nio.DirectLongBufferU::put (18 bytes)
+Event: 2.022 Thread 0x000000001e2d0800 nmethod 561 0x000000000353d5d0 code [0x000000000353d740, 0x000000000353d9b0]
+Event: 2.023 Thread 0x000000001e2d0800  562       3       sun.misc.URLClassPath::getResource (83 bytes)
+Event: 2.023 Thread 0x000000001e2d8000  563       4       java.io.WinNTFileSystem::normalize (143 bytes)
+Event: 2.023 Thread 0x000000001e2d0800 nmethod 562 0x000000000353ced0 code [0x000000000353d060, 0x000000000353d428]
+Event: 2.023 Thread 0x000000001e2d0800  564   !   3       java.util.zip.ZipFile$ZipFileInputStream::close (110 bytes)
+Event: 2.024 Thread 0x000000001e2d0800 nmethod 564 0x000000000353c150 code [0x000000000353c300, 0x000000000353cb38]
+Event: 2.026 Thread 0x000000001e2d0000  567       4       java.lang.String::getChars (62 bytes)
+Event: 2.026 Thread 0x000000001e2d0800  568       1       java.util.logging.LogManager::access$500 (5 bytes)
+Event: 2.026 Thread 0x000000001e2d8000 nmethod 563 0x0000000003549a10 code [0x0000000003549b80, 0x0000000003549f88]
+Event: 2.026 Thread 0x000000001e2d0800 nmethod 568 0x000000000353ac90 code [0x000000000353ade0, 0x000000000353aed0]
+Event: 2.027 Thread 0x000000001e2d0000 nmethod 567 0x000000000354a250 code [0x000000000354a3a0, 0x000000000354a518]
+Event: 2.027 Thread 0x000000001e2d0800  569       3       java.util.logging.LogManager::getProperty (9 bytes)
+Event: 2.027 Thread 0x000000001e2d0800 nmethod 569 0x000000000353a890 code [0x000000000353aa00, 0x000000000353aba8]
+Event: 2.028 Thread 0x000000001e2d0800  570       1       java.security.CodeSource::getLocation (5 bytes)
+Event: 2.028 Thread 0x000000001e2d0800 nmethod 570 0x000000000353a390 code [0x000000000353a4e0, 0x000000000353a5f0]
+Event: 2.029 Thread 0x000000001e2d0800  571       3       java.util.jar.JarFile::maybeInstantiateVerifier (96 bytes)
+Event: 2.029 Thread 0x000000001e2d0800 nmethod 571 0x0000000003538ed0 code [0x0000000003539100, 0x0000000003539dc8]
+Event: 2.033 Thread 0x000000001e2d0800  573       3       java.net.URLStreamHandler::setURL (40 bytes)
+Event: 2.033 Thread 0x000000001e2d0800 nmethod 573 0x0000000003537f50 code [0x00000000035380e0, 0x0000000003538498]
+Event: 2.033 Thread 0x000000001e2d0800  572  s    3       sun.misc.URLClassPath::getLookupCache (98 bytes)
+Event: 2.033 Thread 0x000000001e2d0800 nmethod 572 0x000000000354a690 code [0x000000000354a820, 0x000000000354ad98]
+Event: 2.034 Thread 0x000000001e2d0800  574   !   3       java.util.logging.LogManager::ensureLogManagerInitialized (128 bytes)
+Event: 2.034 Thread 0x000000001e2d0800 nmethod 574 0x000000000354b350 code [0x000000000354b500, 0x000000000354bb88]
+Event: 2.036 Thread 0x000000001e2d0800  575       1       java.util.logging.Level::intValue (5 bytes)
+Event: 2.036 Thread 0x000000001e2d0800 nmethod 575 0x000000000354c790 code [0x000000000354c8e0, 0x000000000354c9f0]
+Event: 2.037 Thread 0x000000001e2d0800  576       3       java.util.HashMap$HashIterator::nextNode (100 bytes)
+Event: 2.037 Thread 0x000000001e2d0800 nmethod 576 0x000000000354ca50 code [0x000000000354cc00, 0x000000000354d0f8]
+Event: 2.037 Thread 0x000000001e2d0800  577       3       java.util.HashMap$KeyIterator::next (8 bytes)
+Event: 2.037 Thread 0x000000001e2d0800 nmethod 577 0x000000000354d310 code [0x000000000354d480, 0x000000000354d688]
+Event: 2.037 Thread 0x000000001e2d0800  579       3       java.lang.String::compareTo (78 bytes)
+Event: 2.037 Thread 0x000000001e2d0800 nmethod 579 0x000000000354d750 code [0x000000000354d8c0, 0x000000000354dc30]
+Event: 2.037 Thread 0x000000001e2d0800  578       3       java.lang.String::compareTo (9 bytes)
+Event: 2.037 Thread 0x000000001e2d0800 nmethod 578 0x000000000354de50 code [0x000000000354dfc0, 0x000000000354e2a8]
+Event: 2.037 Thread 0x000000001e2d0800  580       1       java.util.HashMap$Node::getValue (5 bytes)
+Event: 2.037 Thread 0x000000001e2d0800 nmethod 580 0x000000000354e350 code [0x000000000354e4a0, 0x000000000354e5b0]
+Event: 2.038 Thread 0x000000001e2d0800  581       3       java.util.HashMap::afterNodeAccess (1 bytes)
+Event: 2.038 Thread 0x000000001e2d0800 nmethod 581 0x000000000354e610 code [0x000000000354e760, 0x000000000354e8b0]
+Event: 2.038 Thread 0x000000001e2d0800  582       3       java.lang.Math::max (11 bytes)
+Event: 2.038 Thread 0x000000001e2d0800 nmethod 582 0x000000000354e910 code [0x000000000354ea60, 0x000000000354ebf0]
+Event: 2.038 Thread 0x000000001e2d0800  585       3       java.util.HashSet::add (20 bytes)
+Event: 2.038 Thread 0x000000001e2d0800 nmethod 585 0x000000000354ec50 code [0x000000000354edc0, 0x000000000354f048]
+Event: 2.038 Thread 0x000000001e2d0800  583       3       java.util.AbstractSet::<init> (5 bytes)
+Event: 2.038 Thread 0x000000001e2d0800 nmethod 583 0x000000000354f110 code [0x000000000354f280, 0x000000000354f490]
+Event: 2.038 Thread 0x000000001e2d0800  586       3       java.util.IdentityHashMap$IdentityHashMapIterator::hasNext (50 bytes)
+Event: 2.038 Thread 0x000000001e2d0800 nmethod 586 0x000000000354f550 code [0x000000000354f6c0, 0x000000000354f950]
+Event: 2.038 Thread 0x000000001e2d0800  587       3       java.util.HashMap::resize (359 bytes)
+Event: 2.039 Thread 0x000000001e2d0800 nmethod 587 0x000000000354fa50 code [0x000000000354fca0, 0x0000000003550ee8]
+Event: 2.039 Thread 0x000000001e2d0800  584       1       java.util.concurrent.atomic.AtomicInteger::get (5 bytes)
+Event: 2.039 Thread 0x000000001e2d0800 nmethod 584 0x0000000003551a50 code [0x0000000003551ba0, 0x0000000003551cb0]
+Event: 2.039 Thread 0x000000001e2d0800  588       3       java.util.logging.LogManager$LoggerContext::requiresDefaultLoggers (29 bytes)
+Event: 2.040 Thread 0x000000001e2d0800 nmethod 588 0x0000000003551d10 code [0x0000000003551e80, 0x00000000035522c8]
+Event: 2.040 Thread 0x000000001e2d0800  589       3       java.util.logging.LogManager::access$100 (4 bytes)
+Event: 2.040 Thread 0x000000001e2d0800 nmethod 589 0x00000000035523d0 code [0x0000000003552520, 0x0000000003552650]
+Event: 2.047 Thread 0x000000001e2d0800  590  s    3       java.util.Hashtable::put (104 bytes)
+Event: 2.047 Thread 0x000000001e2d0800 nmethod 590 0x00000000035526d0 code [0x00000000035528a0, 0x0000000003553058]
+Event: 2.048 Thread 0x000000001e2d0800  592       3       java.util.Hashtable::addEntry (87 bytes)
+Event: 2.048 Thread 0x000000001e2d0800 nmethod 592 0x00000000035533d0 code [0x0000000003553580, 0x0000000003553bd8]
+Event: 2.048 Thread 0x000000001e2d0800  591       3       java.util.Hashtable$Entry::<init> (26 bytes)
+Event: 2.048 Thread 0x000000001e2d0800 nmethod 591 0x0000000003553f10 code [0x0000000003554060, 0x0000000003554270]
+Event: 2.048 Thread 0x000000001e2d0800  593       3       java.lang.invoke.MethodType::toMethodDescriptorString (21 bytes)
+Event: 2.049 Thread 0x000000001e2d0800 nmethod 593 0x0000000003554350 code [0x0000000003554560, 0x0000000003555078]
+Event: 2.049 Thread 0x000000001e2d0800  594       3       jdk.internal.org.objectweb.asm.Item::<init> (5 bytes)
+Event: 2.049 Thread 0x000000001e2d0800 nmethod 594 0x00000000035557d0 code [0x0000000003555920, 0x0000000003555ad0]
+Event: 2.053 Thread 0x000000001e2d0000  595  s!   4       sun.misc.URLClassPath::getLoader (243 bytes)
+Event: 2.054 Thread 0x000000001e2d0800  596       1       java.util.HashMap::afterNodeInsertion (1 bytes)
+Event: 2.054 Thread 0x000000001e2d0800 nmethod 596 0x0000000003556010 code [0x0000000003556160, 0x0000000003556270]
+Event: 2.054 Thread 0x000000001e2d0800  598       3       sun.util.ResourceBundleEnumeration::hasMoreElements (117 bytes)
+Event: 2.054 Thread 0x000000001e2d0800 nmethod 598 0x00000000035562d0 code [0x00000000035564c0, 0x0000000003556f08]
+Event: 2.054 Thread 0x000000001e2d0800  597       3       java.lang.String::toString (2 bytes)
+Event: 2.054 Thread 0x000000001e2d0800 nmethod 597 0x0000000003557150 code [0x00000000035572a0, 0x00000000035573f0]
+Event: 2.054 Thread 0x000000001e2d0800  599       3       sun.util.ResourceBundleEnumeration::nextElement (5 bytes)
+Event: 2.054 Thread 0x000000001e2d0800 nmethod 599 0x0000000003557450 code [0x00000000035575e0, 0x0000000003557918]
+Event: 2.055 Thread 0x000000001e2d0800  600       3       sun.misc.Launcher$AppClassLoader::loadClass (85 bytes)
+Event: 2.056 Thread 0x000000001e2d0800 nmethod 600 0x0000000003557a90 code [0x0000000003557cc0, 0x0000000003558a08]
+Event: 2.056 Thread 0x000000001e2d0800  601  s    3       sun.misc.URLClassPath::knownToNotExist (24 bytes)
+Event: 2.056 Thread 0x000000001e2d0800 nmethod 601 0x0000000003558e90 code [0x0000000003559000, 0x00000000035593c8]
+Event: 2.057 Thread 0x000000001e2d0800  602  s    3       java.lang.StringBuffer::append (13 bytes)
+Event: 2.057 Thread 0x000000001e2d0800 nmethod 602 0x0000000003559490 code [0x0000000003559600, 0x0000000003559928]
+Event: 2.057 Thread 0x000000001e2cf000  603  s    4       sun.misc.URLClassPath::getNextLoader (88 bytes)
+Event: 2.058 Thread 0x000000001e2d8000  604       4       java.lang.AbstractStringBuilder::append (50 bytes)
+Event: 2.061 Thread 0x000000001e2d8000 nmethod 604 0x000000000355ca50 code [0x000000000355cba0, 0x000000000355cfd8]
+Event: 2.074 Thread 0x000000001e2d0000 nmethod 595 0x00000000035605d0 code [0x0000000003560820, 0x0000000003562330]
+Event: 2.081 Thread 0x000000001e2cf000 nmethod 603 0x0000000003563790 code [0x0000000003563a00, 0x00000000035654d0]
+Event: 2.238 Thread 0x000000001e2d0800  605       3       sun.util.logging.PlatformLogger::isLoggable (38 bytes)
+Event: 2.239 Thread 0x000000001e2d0800 nmethod 605 0x000000000355af50 code [0x000000000355b120, 0x000000000355b948]
+Event: 2.239 Thread 0x000000001e2d0800  607   !   3       sun.awt.AppContext::get (123 bytes)
+Event: 2.239 Thread 0x000000001e2d0800 nmethod 607 0x000000000355a010 code [0x000000000355a1c0, 0x000000000355aae8]
+Event: 2.239 Thread 0x000000001e2d0800  608       3       sun.awt.AppContext::getAppContext (51 bytes)
+Event: 2.239 Thread 0x000000001e2d0800 nmethod 608 0x000000000355fc10 code [0x000000000355fdc0, 0x0000000003560438]
+Event: 2.239 Thread 0x000000001e2d0800  606       3       sun.util.logging.PlatformLogger$JavaLoggerProxy::isLoggable (12 bytes)
+Event: 2.240 Thread 0x000000001e2d0800 nmethod 606 0x000000000355f190 code [0x000000000355f320, 0x000000000355f990]
+Event: 2.244 Thread 0x000000001e2d0800  609       3       java.lang.AbstractStringBuilder::append (50 bytes)
+Event: 2.244 Thread 0x000000001e2d0800 nmethod 609 0x000000000355e110 code [0x000000000355e2e0, 0x000000000355ea38]
+Event: 2.244 Thread 0x000000001e2d0800  610   !   3       java.util.WeakHashMap::expungeStaleEntries (139 bytes)
+Event: 2.244 Thread 0x000000001e2d0800 nmethod 610 0x0000000003566f10 code [0x00000000035670e0, 0x0000000003567c08]
+Event: 2.244 Thread 0x000000001e2d0800  611       3       java.util.WeakHashMap::hash (28 bytes)
+Event: 2.244 Thread 0x000000001e2d0800 nmethod 611 0x000000000355dc90 code [0x000000000355de00, 0x000000000355e048]
+Event: 2.245 Thread 0x000000001e2d0800  612       3       java.util.WeakHashMap::remove (133 bytes)
+Event: 2.245 Thread 0x000000001e2d0800 nmethod 612 0x0000000003568210 code [0x0000000003568400, 0x0000000003568ee8]
+Event: 2.245 Thread 0x000000001e2d0800  613       3       java.lang.String::concat (47 bytes)
+Event: 2.246 Thread 0x000000001e2d0000  615   !   4       sun.misc.URLClassPath$JarLoader::getResource (85 bytes)
+Event: 2.246 Thread 0x000000001e2d0800 nmethod 613 0x0000000003569350 code [0x0000000003569520, 0x0000000003569cd8]
+Event: 2.246 Thread 0x000000001e2d0800  614       3       java.lang.String::getChars (16 bytes)
+Event: 2.246 Thread 0x000000001e2d0800 nmethod 614 0x000000000355d610 code [0x000000000355d780, 0x000000000355d988]
+Event: 2.249 Thread 0x000000001e2d0800  616       3       java.lang.Integer::valueOf (32 bytes)
+Event: 2.249 Thread 0x000000001e2d0800 nmethod 616 0x000000000356a050 code [0x000000000356a1c0, 0x000000000356a510]
+Event: 2.249 Thread 0x000000001e2d0800  617       3       java.lang.Integer::<init> (10 bytes)
+Event: 2.249 Thread 0x000000001e2d0800 nmethod 617 0x000000000356a6d0 code [0x000000000356a840, 0x000000000356aa50]
+Event: 2.249 Thread 0x000000001e2d0800  618       3       java.lang.Integer::hashCode (8 bytes)
+Event: 2.249 Thread 0x000000001e2d0800 nmethod 618 0x000000000356ab10 code [0x000000000356ac60, 0x000000000356ae10]
+Event: 2.249 Thread 0x000000001e2d0800  619       3       java.lang.Integer::hashCode (2 bytes)
+Event: 2.249 Thread 0x000000001e2d0800 nmethod 619 0x000000000356aed0 code [0x000000000356b020, 0x000000000356b150]
+Event: 2.249 Thread 0x000000001e2d0800  620       1       java.lang.Integer::intValue (5 bytes)
+Event: 2.249 Thread 0x000000001e2d0800 nmethod 620 0x000000000356b1d0 code [0x000000000356b320, 0x000000000356b430]
+Event: 2.256 Thread 0x000000001e2d0800  621       3       java.lang.invoke.MemberName::isResolved (13 bytes)
+Event: 2.257 Thread 0x000000001e2d0800 nmethod 621 0x000000000356b490 code [0x000000000356b5e0, 0x000000000356b790]
+Event: 2.257 Thread 0x000000001e2d0800  622       3       jdk.internal.org.objectweb.asm.Label::resolve (214 bytes)
+Event: 2.257 Thread 0x000000001e2d0800 nmethod 622 0x000000000356b810 code [0x000000000356b9a0, 0x000000000356be70]
+Event: 2.257 Thread 0x000000001e2d0800  623       3       java.lang.invoke.MemberName::getReferenceKind (12 bytes)
+Event: 2.257 Thread 0x000000001e2d0800 nmethod 623 0x000000000356c2d0 code [0x000000000356c420, 0x000000000356c590]
+Event: 2.257 Thread 0x000000001e2d0800  624       3       jdk.internal.org.objectweb.asm.Label::<init> (5 bytes)
+Event: 2.257 Thread 0x000000001e2d0800 nmethod 624 0x000000000356c610 code [0x000000000356c760, 0x000000000356c910]
+Event: 2.260 Thread 0x000000001e2d0000 nmethod 615 0x0000000003573550 code [0x00000000035737a0, 0x0000000003574af0]
+Event: 2.262 Thread 0x000000001e2d0800  625       1       sun.java2d.loops.SurfaceType::getUniqueID (5 bytes)
+Event: 2.262 Thread 0x000000001e2d0800 nmethod 625 0x0000000003571a90 code [0x0000000003571be0, 0x0000000003571cf0]
+Event: 2.262 Thread 0x000000001e2d0800  626       1       sun.java2d.loops.CompositeType::getUniqueID (5 bytes)
+Event: 2.262 Thread 0x000000001e2d0800 nmethod 626 0x00000000035717d0 code [0x0000000003571920, 0x0000000003571a30]
+Event: 2.262 Thread 0x000000001e2d0800  627  s    3       sun.java2d.loops.GraphicsPrimitive::makeUniqueID (26 bytes)
+Event: 2.262 Thread 0x000000001e2d0800 nmethod 627 0x0000000003571090 code [0x0000000003571200, 0x0000000003571690]
+Event: 2.262 Thread 0x000000001e2d0800  628       3       sun.java2d.loops.GraphicsPrimitive::<init> (75 bytes)
+Event: 2.263 Thread 0x000000001e2d0800 nmethod 628 0x0000000003570550 code [0x00000000035706e0, 0x0000000003570dd0]
+Event: 2.273 Thread 0x000000001e2d0800  629       3       java.io.FilterInputStream::<init> (10 bytes)
+Event: 2.273 Thread 0x000000001e2d0800 nmethod 629 0x0000000003578890 code [0x0000000003578a00, 0x0000000003578c50]
+Event: 2.273 Thread 0x000000001e2d0800  630       3       java.lang.Short::valueOf (37 bytes)
+Event: 2.274 Thread 0x000000001e2d0800 nmethod 630 0x0000000003578d50 code [0x0000000003578ec0, 0x0000000003579210]
+Event: 2.274 Thread 0x000000001e2d0800  631       3       sun.awt.FontConfiguration::getComponentFontID (25 bytes)
+Event: 2.274 Thread 0x000000001e2d0800 nmethod 631 0x00000000035793d0 code [0x0000000003579540, 0x0000000003579730]
+Event: 2.274 Thread 0x000000001e2d0000  632       4       java.lang.StringBuilder::append (8 bytes)
+Event: 2.275 Thread 0x000000001e2d0800  633       3       sun.awt.FontConfiguration::getString (53 bytes)
+Event: 2.275 Thread 0x000000001e2d0800 nmethod 633 0x0000000003579a90 code [0x0000000003579c20, 0x000000000357a0a8]
+Event: 2.275 Thread 0x000000001e2d0800  636       3       java.util.HashSet::contains (9 bytes)
+Event: 2.275 Thread 0x000000001e2d0800 nmethod 636 0x000000000357a2d0 code [0x000000000357a440, 0x000000000357a668]
+Event: 2.275 Thread 0x000000001e2d0800  634       3       sun.awt.FontConfiguration::getComponentFileID (6 bytes)
+Event: 2.275 Thread 0x000000001e2d0800 nmethod 634 0x000000000357a710 code [0x000000000357a860, 0x000000000357a9d0]
+Event: 2.275 Thread 0x000000001e2d0800  635       3       sun.awt.windows.WFontConfiguration::getFaceNameFromComponentFontName (2 bytes)
+Event: 2.275 Thread 0x000000001e2d0800 nmethod 635 0x000000000357aa90 code [0x000000000357abe0, 0x000000000357ad30]
+Event: 2.275 Thread 0x000000001e2cf000  637       4       java.lang.String::indexOf (7 bytes)
+Event: 2.277 Thread 0x000000001e2cf000 nmethod 637 0x000000000357db10 code [0x000000000357dc40, 0x000000000357ddb8]
+Event: 2.277 Thread 0x000000001e2d0000 nmethod 632 0x000000000357bc50 code [0x000000000357bdc0, 0x000000000357c208]
+Event: 2.281 Thread 0x000000001e2d0800  638       1       sun.java2d.loops.GraphicsPrimitive::getUniqueID (5 bytes)
+Event: 2.281 Thread 0x000000001e2d0800 nmethod 638 0x000000000357b790 code [0x000000000357b8e0, 0x000000000357b9f0]
+Event: 2.281 Thread 0x000000001e2d0800  639       3       sun.java2d.loops.GraphicsPrimitiveMgr$1::compare (39 bytes)
+Event: 2.282 Thread 0x000000001e2d0800 nmethod 639 0x000000000357b010 code [0x000000000357b180, 0x000000000357b690]
+Event: 2.282 Thread 0x000000001e2d8000  640       4       sun.java2d.loops.GraphicsPrimitiveMgr$1::compare (39 bytes)
+Event: 2.282 Thread 0x000000001e2d0800  641       3       sun.java2d.loops.GraphicsPrimitiveMgr$2::compare (39 bytes)
+Event: 2.282 Thread 0x000000001e2d0800 nmethod 641 0x000000000357d3d0 code [0x000000000357d540, 0x000000000357d9d0]
+Event: 2.282 Thread 0x000000001e2d0800  642       1       sun.java2d.loops.CompositeType::getSuperType (5 bytes)
+Event: 2.282 Thread 0x000000001e2d0800 nmethod 642 0x000000000357d110 code [0x000000000357d260, 0x000000000357d370]
+Event: 2.282 Thread 0x000000001e2d0800  643       3       java.util.Arrays::binarySearch0 (95 bytes)
+Event: 2.282 Thread 0x000000001e2d0800 nmethod 643 0x000000000357c910 code [0x000000000357caa0, 0x000000000357ced8]
+Event: 2.282 Thread 0x000000001e2d0800  644       3       sun.java2d.loops.GraphicsPrimitiveMgr::locate (104 bytes)
+Event: 2.282 Thread 0x000000001e2d8000 nmethod 640 0x000000000357e190 code [0x000000000357e2e0, 0x000000000357e3d8]
+Event: 2.283 Thread 0x000000001e2d0800 nmethod 644 0x0000000003580290 code [0x0000000003580480, 0x0000000003580eb8]
+Event: 2.283 Thread 0x000000001e2d0800  645       3       java.util.Arrays::binarySearch (10 bytes)
+Event: 2.283 Thread 0x000000001e2d0800 nmethod 645 0x000000000357fed0 code [0x0000000003580040, 0x00000000035801c8]
+Event: 2.283 Thread 0x000000001e2d0800  646       1       sun.java2d.loops.SurfaceType::getSuperType (5 bytes)
+Event: 2.283 Thread 0x000000001e2d0800 nmethod 646 0x000000000357ded0 code [0x000000000357e020, 0x000000000357e130]
+Event: 2.283 Thread 0x000000001e2d0800  647       1       java.awt.Component::getParent_NoClientCode (5 bytes)
+Event: 2.283 Thread 0x000000001e2d0800 nmethod 647 0x000000000357c610 code [0x000000000357c760, 0x000000000357c870]
+Event: 2.284 Thread 0x000000001e2d0800  648       3       java.awt.Component::getTreeLock (4 bytes)
+Event: 2.284 Thread 0x000000001e2d0800 nmethod 648 0x000000000357fbd0 code [0x000000000357fd20, 0x000000000357fe70]
+Event: 2.285 Thread 0x000000001e2d0800  649       1       java.awt.Component::getPeer (5 bytes)
+Event: 2.285 Thread 0x000000001e2d0800 nmethod 649 0x000000000357f910 code [0x000000000357fa60, 0x000000000357fb70]
+Event: 2.302 Thread 0x000000001e2d0800  650       3       java.awt.Component::checkTreeLock (21 bytes)
+Event: 2.302 Thread 0x000000001e2cf000  652       4       java.util.ArrayList::get (11 bytes)
+Event: 2.302 Thread 0x000000001e2d0800 nmethod 650 0x000000000357eb50 code [0x000000000357ece0, 0x000000000357f038]
+Event: 2.303 Thread 0x000000001e2cf000 nmethod 652 0x000000000357e850 code [0x000000000357e980, 0x000000000357ea38]
+Event: 2.310 Thread 0x000000001e2d0800  654       3       java.util.Arrays::equals (78 bytes)
+Event: 2.310 Thread 0x000000001e2d0800 nmethod 654 0x0000000003582e50 code [0x0000000003582fe0, 0x00000000035834c8]
+Event: 2.311 Thread 0x000000001e2d0800  655       3       sun.util.logging.LoggingSupport::ensureAvailable (17 bytes)
+Event: 2.311 Thread 0x000000001e2d0800 nmethod 655 0x0000000003582790 code [0x00000000035828e0, 0x0000000003582a30]
+Event: 2.320 Thread 0x000000001e2d0800  657       3       java.util.logging.Logger::isLoggable (25 bytes)
+Event: 2.320 Thread 0x000000001e2d0800 nmethod 657 0x00000000035822d0 code [0x0000000003582440, 0x00000000035826d0]
+Event: 2.320 Thread 0x000000001e2d0800  658       1       java.util.concurrent.locks.AbstractQueuedSynchronizer::getState (5 bytes)
+Event: 2.320 Thread 0x000000001e2d0800 nmethod 658 0x0000000003582010 code [0x0000000003582160, 0x0000000003582270]
+Event: 2.320 Thread 0x000000001e2d0800  659       1       java.util.concurrent.locks.AbstractOwnableSynchronizer::getExclusiveOwnerThread (5 bytes)
+Event: 2.320 Thread 0x000000001e2d0800 nmethod 659 0x0000000003581d50 code [0x0000000003581ea0, 0x0000000003581fb0]
+Event: 2.322 Thread 0x000000001e2d0800  660       1       java.awt.AWTEvent::getID (5 bytes)
+Event: 2.322 Thread 0x000000001e2d0800 nmethod 660 0x0000000003581a90 code [0x0000000003581be0, 0x0000000003581cf0]
+Event: 2.323 Thread 0x000000001e2d0800  661       3       java.awt.Component::getContainer (5 bytes)
+Event: 2.323 Thread 0x000000001e2d0800 nmethod 661 0x00000000035816d0 code [0x0000000003581820, 0x0000000003581a10]
+Event: 2.326 Thread 0x000000001e2d0800  662       1       java.awt.Component::getX (5 bytes)
+Event: 2.326 Thread 0x000000001e2d0800 nmethod 662 0x0000000003581410 code [0x0000000003581560, 0x0000000003581670]
+Event: 2.326 Thread 0x000000001e2d0800  663       1       java.awt.Component::getY (5 bytes)
+Event: 2.326 Thread 0x000000001e2d0800 nmethod 663 0x0000000003583ed0 code [0x0000000003584020, 0x0000000003584130]
+Event: 2.328 Thread 0x000000001e2d0800  664       1       java.util.EventObject::getSource (5 bytes)
+Event: 2.328 Thread 0x000000001e2d0800 nmethod 664 0x0000000003584190 code [0x00000000035842e0, 0x00000000035843f0]
+Event: 2.330 Thread 0x000000001e2d0800  665       3       java.util.concurrent.locks.AbstractOwnableSynchronizer::setExclusiveOwnerThread (6 bytes)
+Event: 2.331 Thread 0x000000001e2d0800 nmethod 665 0x0000000003584450 code [0x00000000035845a0, 0x0000000003584710]
+Event: 2.332 Thread 0x000000001e2d0800  666       3       java.awt.Component::getParent (5 bytes)
+Event: 2.332 Thread 0x000000001e2d0800 nmethod 666 0x0000000003584790 code [0x00000000035848e0, 0x0000000003584ad0]
+Event: 2.335 Thread 0x000000001e2d0800  667       3       java.util.ArrayList$Itr::next (66 bytes)
+Event: 2.335 Thread 0x000000001e2d0800 nmethod 667 0x0000000003585250 code [0x0000000003585400, 0x00000000035858e8]
+Event: 2.336 Thread 0x000000001e2d0800  668       3       sun.util.locale.LocaleUtils::toLower (17 bytes)
+Event: 2.336 Thread 0x000000001e2d0800 nmethod 668 0x0000000003585b50 code [0x0000000003585cc0, 0x0000000003585f30]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (3 events):
+Event: 0.951 Thread 0x000000001e1f3800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003496048 method=java.lang.ThreadLocal.get()Ljava/lang/Object; @ 11
+Event: 0.952 Thread 0x000000001e1f3800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003496484 method=java.lang.ThreadLocal$ThreadLocalMap.getEntry(Ljava/lang/ThreadLocal;)Ljava/lang/ThreadLocal$ThreadLocalMap$Entry; @ 21
+Event: 2.238 Thread 0x00000000209dc000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000355cf94 method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (18 events):
+Event: 0.024 Thread 0x000000000301e000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x000000076af07cb0) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\sh
+Event: 0.024 Thread 0x000000000301e000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x000000076af07f98) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.c
+Event: 0.120 Thread 0x000000000301e000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076b1313a8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.120 Thread 0x000000000301e000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076b1315b8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.120 Thread 0x000000000301e000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076b133fa8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.120 Thread 0x000000000301e000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076b1341b8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.120 Thread 0x000000000301e000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076b135030) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.120 Thread 0x000000000301e000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076b135240) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.171 Thread 0x000000000301e000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000076b63a790) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+Event: 0.172 Thread 0x000000000301e000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000076b6486f0) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+Event: 0.951 Thread 0x000000001e1f3800 Implicit null exception at 0x0000000003495f9a to 0x0000000003496035
+Event: 0.952 Thread 0x000000001e1f3800 Implicit null exception at 0x00000000034963f4 to 0x0000000003496469
+Event: 1.854 Thread 0x000000000301e000 Exception <a 'java/io/FileNotFoundException'> (0x000000076bb6da88) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 1.863 Thread 0x000000000301e000 Exception <a 'java/lang/ClassNotFoundException': sun/dc/DuctusRenderingEngine> (0x000000076bbd3aa0) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 2.051 Thread 0x000000000301e000 Exception <a 'java/io/FileNotFoundException'> (0x000000076c215be8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 2.238 Thread 0x00000000209dc000 Implicit null exception at 0x000000000355cbd6 to 0x000000000355cf79
+Event: 2.271 Thread 0x00000000209dc000 Exception <a 'java/io/FileNotFoundException'> (0x000000076c63f4e8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 2.271 Thread 0x00000000209dc000 Exception <a 'java/lang/NullPointerException'> (0x000000076c63fb20) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1185]
+
+Events (250 events):
+Event: 2.270 loading class sun/awt/Win32FontManager
+Event: 2.271 loading class sun/awt/Win32FontManager done
+Event: 2.271 loading class sun/awt/Win32FontManager$1
+Event: 2.271 loading class sun/awt/Win32FontManager$1 done
+Event: 2.271 loading class sun/font/Font2DHandle
+Event: 2.271 loading class sun/font/Font2DHandle done
+Event: 2.271 loading class sun/font/TrueTypeFont$TTDisposerRecord
+Event: 2.271 loading class sun/font/TrueTypeFont$TTDisposerRecord done
+Event: 2.271 loading class sun/font/TrueTypeFont$1
+Event: 2.271 loading class sun/font/TrueTypeFont$1 done
+Event: 2.271 loading class java/io/RandomAccessFile
+Event: 2.271 loading class java/io/DataOutput
+Event: 2.271 loading class java/io/DataOutput done
+Event: 2.271 loading class java/io/RandomAccessFile done
+Event: 2.271 Executing VM operation: Deoptimize
+Event: 2.271 Executing VM operation: Deoptimize done
+Event: 2.271 loading class java/awt/FontFormatException
+Event: 2.271 loading class java/awt/FontFormatException done
+Event: 2.272 loading class sun/font/CompositeFont
+Event: 2.272 loading class sun/font/CompositeFont done
+Event: 2.272 loading class sun/font/SunFontManager$2
+Event: 2.272 loading class sun/font/SunFontManager$2 done
+Event: 2.272 loading class sun/font/SunFontManager$FontRegistrationInfo
+Event: 2.272 loading class sun/font/SunFontManager$FontRegistrationInfo done
+Event: 2.272 loading class sun/awt/windows/WFontConfiguration
+Event: 2.272 loading class sun/awt/FontConfiguration
+Event: 2.273 loading class sun/awt/FontConfiguration done
+Event: 2.273 loading class sun/awt/windows/WFontConfiguration done
+Event: 2.273 loading class sun/awt/FontDescriptor
+Event: 2.273 loading class sun/awt/FontDescriptor done
+Event: 2.275 loading class sun/font/CompositeFontDescriptor
+Event: 2.275 loading class sun/font/CompositeFontDescriptor done
+Event: 2.275 loading class sun/font/FontFamily
+Event: 2.275 loading class sun/font/FontFamily done
+Event: 2.275 loading class sun/font/SunFontManager$3
+Event: 2.275 loading class sun/font/SunFontManager$3 done
+Event: 2.276 loading class sun/awt/Win32FontManager$2
+Event: 2.276 loading class sun/awt/Win32FontManager$2 done
+Event: 2.276 loading class sun/awt/FontConfiguration$2
+Event: 2.276 loading class sun/awt/FontConfiguration$2 done
+Event: 2.276 loading class sun/awt/windows/WingDings
+Event: 2.276 loading class sun/awt/windows/WingDings done
+Event: 2.276 loading class sun/awt/windows/WingDings$Encoder
+Event: 2.276 loading class sun/awt/windows/WingDings$Encoder done
+Event: 2.276 loading class sun/awt/Symbol
+Event: 2.276 loading class sun/awt/Symbol done
+Event: 2.276 loading class sun/awt/Symbol$Encoder
+Event: 2.276 loading class sun/awt/Symbol$Encoder done
+Event: 2.278 loading class sun/awt/im/InputMethodManager
+Event: 2.279 loading class sun/awt/im/InputMethodManager done
+Event: 2.279 loading class sun/awt/im/ExecutableInputMethodManager
+Event: 2.279 loading class sun/awt/im/ExecutableInputMethodManager done
+Event: 2.279 loading class sun/awt/windows/WInputMethodDescriptor
+Event: 2.279 loading class java/awt/im/spi/InputMethodDescriptor
+Event: 2.279 loading class java/awt/im/spi/InputMethodDescriptor done
+Event: 2.279 loading class sun/awt/windows/WInputMethodDescriptor done
+Event: 2.279 loading class sun/awt/im/InputMethodLocator
+Event: 2.279 loading class sun/awt/im/InputMethodLocator done
+Event: 2.279 loading class sun/awt/im/ExecutableInputMethodManager$3
+Event: 2.279 loading class sun/awt/im/ExecutableInputMethodManager$3 done
+Event: 2.279 loading class java/awt/peer/LightweightPeer
+Event: 2.279 loading class java/awt/peer/LightweightPeer done
+Event: 2.279 loading class sun/awt/NullComponentPeer
+Event: 2.279 loading class sun/awt/NullComponentPeer done
+Event: 2.281 loading class sun/java2d/loops/RenderLoops
+Event: 2.281 loading class sun/java2d/loops/RenderLoops done
+Event: 2.281 loading class sun/java2d/loops/GraphicsPrimitiveMgr$PrimitiveSpec
+Event: 2.281 loading class sun/java2d/loops/GraphicsPrimitiveMgr$PrimitiveSpec done
+Event: 2.281 loading class java/util/TimSort
+Event: 2.281 loading class java/util/TimSort done
+Event: 2.284 loading class java/applet/Applet
+Event: 2.284 loading class java/awt/Panel
+Event: 2.284 loading class java/awt/Panel done
+Event: 2.284 loading class java/applet/Applet done
+Event: 2.285 loading class javax/swing/SwingHeavyWeight
+Event: 2.285 loading class javax/swing/SwingHeavyWeight done
+Event: 2.285 loading class java/awt/SplashScreen
+Event: 2.285 loading class java/awt/SplashScreen done
+Event: 2.285 loading class java/awt/Dialog
+Event: 2.285 loading class java/awt/Dialog done
+Event: 2.285 loading class java/awt/Dialog$ModalityType
+Event: 2.285 loading class java/awt/Dialog$ModalityType done
+Event: 2.290 loading class sun/awt/TimedWindowEvent
+Event: 2.290 loading class sun/awt/TimedWindowEvent done
+Event: 2.290 loading class java/awt/SequencedEvent
+Event: 2.290 loading class java/awt/SequencedEvent done
+Event: 2.290 loading class java/awt/SequencedEvent$1
+Event: 2.290 loading class sun/awt/AWTAccessor$SequencedEventAccessor
+Event: 2.290 loading class sun/awt/AWTAccessor$SequencedEventAccessor done
+Event: 2.290 loading class java/awt/SequencedEvent$1 done
+Event: 2.302 loading class sun/awt/windows/WGlobalCursorManager
+Event: 2.302 loading class sun/awt/GlobalCursorManager
+Event: 2.302 loading class sun/awt/GlobalCursorManager done
+Event: 2.302 loading class sun/awt/windows/WGlobalCursorManager done
+Event: 2.302 loading class sun/awt/GlobalCursorManager$NativeUpdater
+Event: 2.302 loading class sun/awt/GlobalCursorManager$NativeUpdater done
+Event: 2.303 loading class java/awt/Cursor$CursorDisposer
+Event: 2.303 loading class java/awt/Cursor$CursorDisposer done
+Event: 2.303 loading class Main$init$1$1
+Event: 2.303 loading class Main$init$1$1 done
+Event: 2.304 loading class java/awt/event/WindowAdapter
+Event: 2.304 loading class java/awt/event/WindowAdapter done
+Event: 2.304 loading class java/util/IdentityHashMap$KeySet
+Event: 2.304 loading class java/util/IdentityHashMap$KeySet done
+Event: 2.304 loading class java/util/IdentityHashMap$KeyIterator
+Event: 2.304 loading class java/util/IdentityHashMap$KeyIterator done
+Event: 2.304 loading class java/util/LinkedList$ListItr
+Event: 2.304 loading class java/util/LinkedList$ListItr done
+Event: 2.305 loading class javax/swing/RepaintManager$2$1
+Event: 2.305 loading class javax/swing/RepaintManager$2$1 done
+Event: 2.306 loading class java/awt/event/MouseEvent$1
+Event: 2.306 loading class sun/awt/AWTAccessor$MouseEventAccessor
+Event: 2.306 loading class sun/awt/AWTAccessor$MouseEventAccessor done
+Event: 2.306 loading class java/awt/event/MouseEvent$1 done
+Event: 2.306 loading class javax/swing/RepaintManager$4
+Event: 2.307 loading class javax/swing/RepaintManager$4 done
+Event: 2.307 loading class sun/java2d/d3d/D3DSurfaceData$1Status
+Event: 2.307 loading class sun/java2d/d3d/D3DSurfaceData$1Status done
+Event: 2.307 loading class sun/java2d/d3d/D3DSurfaceData$1
+Event: 2.307 loading class sun/java2d/d3d/D3DSurfaceData$1 done
+Event: 2.309 loading class sun/java2d/pipe/BufferedPaints
+Event: 2.309 loading class sun/java2d/pipe/BufferedPaints done
+Event: 2.311 Thread 0x00000000212aa800 Thread added: 0x00000000212aa800
+Event: 2.311 loading class java/awt/GraphicsCallback$PaintCallback
+Event: 2.311 loading class java/awt/GraphicsCallback
+Event: 2.311 loading class sun/awt/SunGraphicsCallback
+Event: 2.311 loading class sun/awt/SunGraphicsCallback done
+Event: 2.311 loading class java/awt/GraphicsCallback done
+Event: 2.311 loading class java/awt/GraphicsCallback$PaintCallback done
+Event: 2.311 loading class sun/awt/image/BufferedImageGraphicsConfig
+Event: 2.311 loading class sun/awt/image/BufferedImageGraphicsConfig done
+Event: 2.311 loading class sun/print/PrinterGraphicsConfig
+Event: 2.311 loading class sun/print/PrinterGraphicsConfig done
+Event: 2.311 loading class sun/java2d/d3d/D3DVolatileSurfaceManager
+Event: 2.312 loading class sun/java2d/d3d/D3DVolatileSurfaceManager done
+Event: 2.315 loading class javax/swing/TimerQueue
+Event: 2.315 loading class javax/swing/TimerQueue done
+Event: 2.315 loading class java/util/concurrent/DelayQueue
+Event: 2.315 loading class java/util/concurrent/BlockingQueue
+Event: 2.315 loading class java/util/concurrent/BlockingQueue done
+Event: 2.315 loading class java/util/AbstractQueue
+Event: 2.315 loading class java/util/AbstractQueue done
+Event: 2.315 loading class java/util/concurrent/DelayQueue done
+Event: 2.315 loading class java/util/PriorityQueue
+Event: 2.315 loading class java/util/PriorityQueue done
+Event: 2.315 loading class javax/swing/TimerQueue$1
+Event: 2.315 loading class javax/swing/TimerQueue$1 done
+Event: 2.315 Thread 0x0000000020aa9800 Thread added: 0x0000000020aa9800
+Event: 2.315 loading class javax/swing/TimerQueue$DelayedTimer
+Event: 2.316 loading class java/util/concurrent/Delayed
+Event: 2.316 loading class java/util/concurrent/Delayed done
+Event: 2.316 loading class javax/swing/TimerQueue$DelayedTimer done
+Event: 2.316 loading class java/util/concurrent/TimeUnit
+Event: 2.316 loading class java/util/concurrent/TimeUnit done
+Event: 2.316 loading class java/util/concurrent/TimeUnit$1
+Event: 2.316 loading class java/util/concurrent/TimeUnit$1 done
+Event: 2.316 loading class java/util/concurrent/TimeUnit$2
+Event: 2.316 loading class java/util/concurrent/TimeUnit$2 done
+Event: 2.316 loading class java/util/concurrent/TimeUnit$3
+Event: 2.316 loading class java/util/concurrent/TimeUnit$3 done
+Event: 2.316 loading class java/util/concurrent/TimeUnit$4
+Event: 2.316 loading class java/util/concurrent/TimeUnit$4 done
+Event: 2.316 loading class java/util/concurrent/TimeUnit$5
+Event: 2.316 loading class java/util/concurrent/TimeUnit$5 done
+Event: 2.316 loading class java/util/concurrent/TimeUnit$6
+Event: 2.316 loading class java/util/concurrent/TimeUnit$6 done
+Event: 2.316 loading class java/util/concurrent/TimeUnit$7
+Event: 2.316 loading class java/util/concurrent/TimeUnit$7 done
+Event: 2.316 loading class sun/awt/image/MultiResolutionImage
+Event: 2.316 loading class sun/awt/image/MultiResolutionImage done
+Event: 2.316 loading class sun/awt/image/ToolkitImage
+Event: 2.317 loading class sun/awt/image/ToolkitImage done
+Event: 2.317 loading class sun/java2d/d3d/D3DSurfaceDataProxy
+Event: 2.317 loading class sun/java2d/d3d/D3DSurfaceDataProxy done
+Event: 2.320 loading class java/awt/EventQueue$4
+Event: 2.320 loading class java/awt/EventQueue$4 done
+Event: 2.328 loading class java/awt/DefaultKeyboardFocusManager$DefaultKeyboardFocusManagerSentEvent
+Event: 2.328 loading class java/awt/SentEvent
+Event: 2.328 loading class java/awt/SentEvent done
+Event: 2.328 loading class java/awt/DefaultKeyboardFocusManager$DefaultKeyboardFocusManagerSentEvent done
+Event: 2.328 loading class java/util/ArrayList$ListItr
+Event: 2.328 loading class java/util/ArrayList$ListItr done
+Event: 2.328 Executing VM operation: Deoptimize
+Event: 2.329 Executing VM operation: Deoptimize done
+Event: 2.329 loading class sun/awt/CausedFocusEvent$Cause
+Event: 2.329 loading class sun/awt/CausedFocusEvent$Cause done
+Event: 2.329 loading class java/awt/KeyboardFocusManager$HeavyweightFocusRequest
+Event: 2.329 loading class java/awt/KeyboardFocusManager$HeavyweightFocusRequest done
+Event: 2.329 loading class java/awt/DefaultKeyboardFocusManager$TypeAheadMarker
+Event: 2.329 loading class java/awt/DefaultKeyboardFocusManager$TypeAheadMarker done
+Event: 2.329 loading class java/awt/KeyboardFocusManager$LightweightFocusRequest
+Event: 2.329 loading class java/awt/KeyboardFocusManager$LightweightFocusRequest done
+Event: 2.329 loading class sun/awt/CausedFocusEvent
+Event: 2.330 loading class sun/awt/CausedFocusEvent done
+Event: 2.333 loading class java/awt/Event
+Event: 2.333 loading class java/awt/Event done
+Event: 2.333 loading class java/awt/event/MouseWheelEvent
+Event: 2.333 loading class java/awt/event/MouseWheelEvent done
+Event: 2.333 loading class java/awt/TextComponent
+Event: 2.334 loading class java/awt/TextComponent done
+Event: 2.334 loading class javax/swing/text/JTextComponent
+Event: 2.334 loading class javax/swing/Scrollable
+Event: 2.334 loading class javax/swing/Scrollable done
+Event: 2.334 loading class javax/swing/text/JTextComponent done
+Event: 2.334 loading class java/awt/AWTEvent$2
+Event: 2.334 loading class java/awt/AWTEvent$2 done
+Event: 2.334 loading class sun/reflect/UnsafeBooleanFieldAccessorImpl
+Event: 2.334 loading class sun/reflect/UnsafeBooleanFieldAccessorImpl done
+Event: 2.334 loading class java/awt/KeyboardFocusManager$3
+Event: 2.334 loading class java/awt/KeyboardFocusManager$3 done
+Event: 2.334 loading class java/awt/im/InputContext
+Event: 2.335 loading class java/awt/im/InputContext done
+Event: 2.335 loading class sun/awt/im/InputMethodContext
+Event: 2.335 loading class java/awt/im/spi/InputMethodContext
+Event: 2.335 loading class java/awt/im/InputMethodRequests
+Event: 2.335 loading class java/awt/im/InputMethodRequests done
+Event: 2.335 loading class java/awt/im/spi/InputMethodContext done
+Event: 2.335 loading class sun/awt/im/InputContext
+Event: 2.335 loading class sun/awt/im/InputContext done
+Event: 2.335 loading class sun/awt/im/InputMethodContext done
+Event: 2.335 loading class sun/awt/windows/WInputMethod
+Event: 2.335 loading class sun/awt/im/InputMethodAdapter
+Event: 2.335 loading class java/awt/im/spi/InputMethod
+Event: 2.335 loading class java/awt/im/spi/InputMethod done
+Event: 2.335 loading class sun/awt/im/InputMethodAdapter done
+Event: 2.335 loading class sun/awt/windows/WInputMethod done
+Event: 2.336 loading class sun/util/locale/ParseStatus
+Event: 2.336 loading class sun/util/locale/ParseStatus done
+Event: 2.336 loading class sun/util/locale/StringTokenIterator
+Event: 2.336 loading class sun/util/locale/StringTokenIterator done
+Event: 2.336 loading class sun/util/locale/InternalLocaleBuilder
+Event: 2.336 loading class sun/util/locale/InternalLocaleBuilder done
+Event: 2.336 loading class sun/util/locale/InternalLocaleBuilder$CaseInsensitiveChar
+Event: 2.336 loading class sun/util/locale/InternalLocaleBuilder$CaseInsensitiveChar done
+Event: 2.346 loading class sun/awt/im/CompositionAreaHandler
+Event: 2.346 loading class sun/awt/im/CompositionAreaHandler done
+Event: 2.346 loading class java/text/AttributedString
+Event: 2.346 loading class java/text/AttributedString done
+Event: 2.346 loading class java/text/AttributedString$AttributedStringIterator
+Event: 2.346 loading class java/text/AttributedCharacterIterator
+Event: 2.346 loading class java/text/CharacterIterator
+Event: 2.347 loading class java/text/CharacterIterator done
+Event: 2.347 loading class java/text/AttributedCharacterIterator done
+Event: 2.347 loading class java/text/AttributedString$AttributedStringIterator done
+Event: 2.347 loading class javax/swing/MenuSelectionManager
+Event: 2.347 loading class javax/swing/MenuSelectionManager done
+Event: 2.433 loading class javax/swing/Timer$1
+Event: 2.434 loading class javax/swing/Timer$1 done
+Event: 2.434 loading class org/cef/browser/CefBrowserWr$1$1
+Event: 2.434 loading class org/cef/browser/CefBrowserWr$1$1 done
+
+
+Dynamic libraries:
+0x00007ff777890000 - 0x00007ff77791b000 	E:\program_langeage\java-1.8.0.212-openjdk\bin\java.exe
+0x00007ff9cca20000 - 0x00007ff9ccc10000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ff9cc310000 - 0x00007ff9cc3c2000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ff9c9b40000 - 0x00007ff9c9de3000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ff9cb9f0000 - 0x00007ff9cba93000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ff9cbcd0000 - 0x00007ff9cbd6e000 	C:\Windows\System32\msvcrt.dll
+0x00007ff9cc940000 - 0x00007ff9cc9d7000 	C:\Windows\System32\sechost.dll
+0x00007ff9cbaa0000 - 0x00007ff9cbbc0000 	C:\Windows\System32\RPCRT4.dll
+0x00007ff9cc590000 - 0x00007ff9cc724000 	C:\Windows\System32\USER32.dll
+0x00007ff9c9e40000 - 0x00007ff9c9e61000 	C:\Windows\System32\win32u.dll
+0x00007ff9cbd70000 - 0x00007ff9cbd96000 	C:\Windows\System32\GDI32.dll
+0x00007ff9ca6f0000 - 0x00007ff9ca884000 	C:\Windows\System32\gdi32full.dll
+0x00007ff9caa30000 - 0x00007ff9caace000 	C:\Windows\System32\msvcp_win.dll
+0x00007ff9ca5f0000 - 0x00007ff9ca6ea000 	C:\Windows\System32\ucrtbase.dll
+0x00007ff9b8ab0000 - 0x00007ff9b8d35000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.778_none_e6c6b761130d4fb8\COMCTL32.dll
+0x00007ff9cbf20000 - 0x00007ff9cc256000 	C:\Windows\System32\combase.dll
+0x00007ff9c99b0000 - 0x00007ff9c9a30000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ff9cc7b0000 - 0x00007ff9cc7de000 	C:\Windows\System32\IMM32.DLL
+0x0000000060410000 - 0x00000000604e2000 	E:\program_langeage\java-1.8.0.212-openjdk\jre\bin\msvcr100.dll
+0x000000005fb40000 - 0x0000000060401000 	E:\program_langeage\java-1.8.0.212-openjdk\jre\bin\server\jvm.dll
+0x00007ff9cc3d0000 - 0x00007ff9cc3d8000 	C:\Windows\System32\PSAPI.DLL
+0x00007ff9c1a80000 - 0x00007ff9c1a89000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ff9b8e90000 - 0x00007ff9b8eb4000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ff9c4d10000 - 0x00007ff9c4d1a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ff9cbbe0000 - 0x00007ff9cbc4f000 	C:\Windows\System32\WS2_32.dll
+0x00007ff9b8900000 - 0x00007ff9b892d000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ff9c9df0000 - 0x00007ff9c9e3a000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ff9bb640000 - 0x00007ff9bb64f000 	E:\program_langeage\java-1.8.0.212-openjdk\jre\bin\verify.dll
+0x00007ff9b3780000 - 0x00007ff9b37a9000 	E:\program_langeage\java-1.8.0.212-openjdk\jre\bin\java.dll
+0x00007ff9984e0000 - 0x00007ff998503000 	E:\program_langeage\java-1.8.0.212-openjdk\jre\bin\instrument.dll
+0x00007ff9bb620000 - 0x00007ff9bb636000 	E:\program_langeage\java-1.8.0.212-openjdk\jre\bin\zip.dll
+0x00007ff9cb300000 - 0x00007ff9cb9e5000 	C:\Windows\System32\SHELL32.dll
+0x00007ff9cc260000 - 0x00007ff9cc309000 	C:\Windows\System32\shcore.dll
+0x00007ff9c9e70000 - 0x00007ff9ca5f0000 	C:\Windows\System32\windows.storage.dll
+0x00007ff9c98f0000 - 0x00007ff9c9913000 	C:\Windows\System32\profapi.dll
+0x00007ff9c9920000 - 0x00007ff9c996a000 	C:\Windows\System32\powrprof.dll
+0x00007ff9c98e0000 - 0x00007ff9c98f0000 	C:\Windows\System32\UMPDC.dll
+0x00007ff9cbc60000 - 0x00007ff9cbcb2000 	C:\Windows\System32\shlwapi.dll
+0x00007ff9c9970000 - 0x00007ff9c9981000 	C:\Windows\System32\kernel.appcore.dll
+0x00007ff9ca890000 - 0x00007ff9ca8a7000 	C:\Windows\System32\cryptsp.dll
+0x00007ff9b3710000 - 0x00007ff9b372a000 	E:\Developer_Tools\IDEA\IntelliJ IDEA 2019\IntelliJ IDEA 2019.1\bin\breakgen64.dll
+0x00007ff9b38d0000 - 0x00007ff9b38ea000 	E:\program_langeage\java-1.8.0.212-openjdk\jre\bin\net.dll
+0x00007ff9bb320000 - 0x00007ff9bb4f5000 	C:\Windows\SYSTEM32\urlmon.dll
+0x00007ff9ba3e0000 - 0x00007ff9ba686000 	C:\Windows\SYSTEM32\iertutil.dll
+0x00007ff9c9280000 - 0x00007ff9c928c000 	C:\Windows\SYSTEM32\CRYPTBASE.DLL
+0x00007ff9c9100000 - 0x00007ff9c9167000 	C:\Windows\system32\mswsock.dll
+0x00007ff9b3760000 - 0x00007ff9b3771000 	E:\program_langeage\java-1.8.0.212-openjdk\jre\bin\nio.dll
+0x00007ff9a5cb0000 - 0x00007ff9a5cb7000 	E:\program_langeage\java-1.8.0.212-openjdk\jre\bin\jawt.dll
+0x00007ff9756b0000 - 0x00007ff97584c000 	E:\Developer_Tools\IDEA\IntelliJ IDEA 2019\IntelliJ IDEA 2019.1\jre64\bin\awt.dll
+0x00007ff9cbe50000 - 0x00007ff9cbf14000 	C:\Windows\System32\OLEAUT32.dll
+0x00007ff9c6670000 - 0x00007ff9c6c30000 	C:\Windows\SYSTEM32\d2d1.dll
+0x00007ff9c7b20000 - 0x00007ff9c7baf000 	C:\Windows\SYSTEM32\apphelp.dll
+0x00007ff998430000 - 0x00007ff9984e0000 	C:\Users\台式大主机\AppData\Local\Temp\org.github.doraig.jcef.amd64\chrome_elf.dll
+0x00007ff93e850000 - 0x00007ff944e1e000 	C:\Users\台式大主机\AppData\Local\Temp\org.github.doraig.jcef.amd64\libcef.dll
+0x00007ff9cc7e0000 - 0x00007ff9cc937000 	C:\Windows\System32\ole32.dll
+0x00007ff9cafa0000 - 0x00007ff9cb070000 	C:\Windows\System32\COMDLG32.dll
+0x00007ff9c8e20000 - 0x00007ff9c8e5a000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x00007ff9b1c20000 - 0x00007ff9b1c2b000 	C:\Windows\SYSTEM32\msdmo.dll
+0x00007ff9ca8e0000 - 0x00007ff9caa29000 	C:\Windows\System32\CRYPT32.dll
+0x00007ff9badc0000 - 0x00007ff9badcc000 	C:\Windows\SYSTEM32\Secur32.dll
+0x00007ff9c9990000 - 0x00007ff9c99a2000 	C:\Windows\System32\MSASN1.dll
+0x00007ff9ba900000 - 0x00007ff9ba917000 	C:\Windows\SYSTEM32\NETAPI32.dll
+0x00007ff9c24b0000 - 0x00007ff9c2515000 	C:\Windows\SYSTEM32\OLEACC.dll
+0x00007ff9c84b0000 - 0x00007ff9c84be000 	C:\Windows\SYSTEM32\HID.DLL
+0x00007ff9c9800000 - 0x00007ff9c9825000 	C:\Windows\SYSTEM32\USERENV.dll
+0x00007ff9c6160000 - 0x00007ff9c624f000 	C:\Windows\SYSTEM32\PROPSYS.dll
+0x00007ff9c8210000 - 0x00007ff9c823d000 	C:\Windows\SYSTEM32\dwmapi.dll
+0x00007ff9afd50000 - 0x00007ff9b004e000 	C:\Windows\SYSTEM32\DWrite.dll
+0x00007ff9c2db0000 - 0x00007ff9c2fa4000 	C:\Windows\SYSTEM32\dbghelp.dll
+0x00007ff9978b0000 - 0x00007ff9978c9000 	C:\Windows\SYSTEM32\USP10.dll
+0x00007ff9c85a0000 - 0x00007ff9c868b000 	C:\Windows\SYSTEM32\dxgi.dll
+0x00007ff9c1e40000 - 0x00007ff9c2007000 	C:\Windows\SYSTEM32\d3d9.dll
+0x00007ff997650000 - 0x00007ff997673000 	C:\Windows\SYSTEM32\dxva2.dll
+0x00007ff9c6c60000 - 0x00007ff9c6ebb000 	C:\Windows\SYSTEM32\d3d11.dll
+0x00007ff997630000 - 0x00007ff997641000 	C:\Windows\SYSTEM32\credui.dll
+0x00007ff9c2a30000 - 0x00007ff9c2b20000 	C:\Windows\SYSTEM32\WINHTTP.dll
+0x00007ff9c2190000 - 0x00007ff9c2219000 	C:\Windows\SYSTEM32\WINSPOOL.DRV
+0x00007ff9b4500000 - 0x00007ff9b454b000 	C:\Windows\SYSTEM32\CRYPTUI.dll
+0x00007ff9ca8b0000 - 0x00007ff9ca8d6000 	C:\Windows\System32\bcrypt.dll
+0x00007ff9c9400000 - 0x00007ff9c9426000 	C:\Windows\SYSTEM32\ncrypt.dll
+0x00007ff9c44b0000 - 0x00007ff9c44cc000 	C:\Windows\SYSTEM32\dhcpcsvc.DLL
+0x00007ff9cbc50000 - 0x00007ff9cbc58000 	C:\Windows\System32\NSI.dll
+0x00007ff9c5480000 - 0x00007ff9c5493000 	C:\Windows\SYSTEM32\WTSAPI32.dll
+0x00007ff9c93c0000 - 0x00007ff9c93fb000 	C:\Windows\SYSTEM32\NTASN1.dll
+0x00007ff9c8580000 - 0x00007ff9c85a0000 	C:\Windows\SYSTEM32\dxcore.dll
+0x00007ff9c97d0000 - 0x00007ff9c97ff000 	C:\Windows\SYSTEM32\SSPICLI.DLL
+0x00007ff9c8f30000 - 0x00007ff9c8f3c000 	C:\Windows\SYSTEM32\NETUTILS.DLL
+0x00007ff9c28a0000 - 0x00007ff9c28b8000 	C:\Windows\SYSTEM32\SAMCLI.DLL
+0x00007ff998340000 - 0x00007ff998425000 	C:\Users\台式大主机\AppData\Local\Temp\org.github.doraig.jcef.amd64\jcef.dll
+0x00007ff9627f0000 - 0x00007ff9629dd000 	E:\program_langeage\java-1.8.0.212-openjdk\jre\bin\awt.dll
+0x00007ff9c7c20000 - 0x00007ff9c7cb9000 	C:\Windows\system32\uxtheme.dll
+0x00007ff9cc450000 - 0x00007ff9cc586000 	C:\Windows\System32\MSCTF.dll
+0x00007ff9c4880000 - 0x00007ff9c489c000 	C:\Windows\system32\NLAapi.dll
+0x00007ff9c44d0000 - 0x00007ff9c44e6000 	C:\Windows\SYSTEM32\dhcpcsvc6.DLL
+0x00007ff9c8e60000 - 0x00007ff9c8f2a000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x00007ff9c4bb0000 - 0x00007ff9c4d0d000 	C:\Windows\system32\audioses.dll
+0x00007ff9c58a0000 - 0x00007ff9c59f3000 	C:\Windows\SYSTEM32\wintypes.dll
+0x00007ff9c4ad0000 - 0x00007ff9c4b42000 	C:\Windows\system32\MMDevAPI.DLL
+0x00007ff9c96e0000 - 0x00007ff9c970a000 	C:\Windows\system32\DEVOBJ.dll
+0x00007ff9cbda0000 - 0x00007ff9cbe42000 	C:\Windows\System32\clbcatq.dll
+0x00007ff9b0640000 - 0x00007ff9b06ee000 	C:\Windows\SYSTEM32\mscms.dll
+0x00007ff9b0620000 - 0x00007ff9b0637000 	C:\Windows\SYSTEM32\ColorAdapterClient.dll
+0x00007ff9c30d0000 - 0x00007ff9c3139000 	C:\Windows\system32\wlanapi.dll
+0x00007ff97fc40000 - 0x00007ff97fd96000 	C:\Windows\system32\opengl32.dll
+0x00007ff97fc10000 - 0x00007ff97fc3c000 	C:\Windows\SYSTEM32\GLU32.dll
+0x00007ff9b0110000 - 0x00007ff9b01ff000 	C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_e0a5a1b06de180e3\nvldumdx.dll
+0x00007ff9c4130000 - 0x00007ff9c415f000 	C:\Windows\SYSTEM32\cryptnet.dll
+0x00007ff9c9ae0000 - 0x00007ff9c9b3c000 	C:\Windows\System32\WINTRUST.DLL
+0x00007ff9cbbc0000 - 0x00007ff9cbbdd000 	C:\Windows\System32\imagehlp.dll
+0x00007ff9c8c80000 - 0x00007ff9c8cb3000 	C:\Windows\system32\rsaenh.dll
+0x00007ff95eb30000 - 0x00007ff960053000 	C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_e0a5a1b06de180e3\nvd3dumx.dll
+0x00007ff9af550000 - 0x00007ff9af814000 	C:\Windows\system32\nvspcap64.dll
+0x00007ff9c8900000 - 0x00007ff9c8931000 	C:\Windows\SYSTEM32\ntmarta.dll
+0x00007ff9c84c0000 - 0x00007ff9c84e2000 	C:\Windows\SYSTEM32\gpapi.dll
+0x00007ff974da0000 - 0x00007ff974e43000 	E:\program_langeage\java-1.8.0.212-openjdk\jre\bin\freetype.dll
+0x00007ff974d50000 - 0x00007ff974d99000 	E:\program_langeage\java-1.8.0.212-openjdk\jre\bin\fontmanager.dll
+0x00007ff9b0a20000 - 0x00007ff9b0abe000 	C:\Windows\System32\TextInputFramework.dll
+0x00007ff9c7500000 - 0x00007ff9c75d4000 	C:\Windows\System32\CoreMessaging.dll
+0x00007ff9b0f20000 - 0x00007ff9b124a000 	C:\Windows\System32\CoreUIComponents.dll
+
+VM Arguments:
+jvm_args: -javaagent:E:\Developer_Tools\IDEA\IntelliJ IDEA 2019\IntelliJ IDEA 2019.1\lib\idea_rt.jar=50469:E:\Developer_Tools\IDEA\IntelliJ IDEA 2019\IntelliJ IDEA 2019.1\bin -Dfile.encoding=UTF-8 
+java_command: Main
+java_class_path (initial): E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\charsets.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\ext\access-bridge-64.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\ext\cldrdata.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\ext\dnsns.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\ext\jaccess.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\ext\localedata.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\ext\nashorn.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\ext\sunec.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\ext\sunjce_provider.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\ext\sunmscapi.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\ext\sunpkcs11.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\ext\zipfs.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\jce.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\jsse.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\management-agent.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\resources.jar;E:\program_langeage\java-1.8.0.212-openjdk\jre\lib\rt.jar;E:\Project\Game\SimpleTowerDefense\build\classes\kotlin\main;E:\Developer_Tools\Gradle\DataSource\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-core\2.13.2\8eb1fc1914eb2550bf3ddea26917c9a7cbb00593\log4j-core-2.13.2.jar;E:\Developer_Tools\Gradle\DataSource\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.13.2\567ea514dedd8679c429c5b5b39b0d67b6464c3c\log4j-api-2.13.2.jar;E:\Developer_Tools\Gradle\DataSource\caches\modules-2\files-2.1\com.alibaba\fastjson\1.2.68\9e3d29f05bcfab1c15a1357ebf2dd513c1d42f49\fastjson-1.2.68.jar;E:\Developer_Tools\Gradle\DataSource\caches\modules-2\files-2.1\com.github.doraig\jcef\78.1-win64\577e9943e2f3d1c24769ca47ed4b03fa5dc0b7bf\jcef-78.1-win64.jar;E:\Developer_Tools\Gradle\DataSource\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk8\1.3.71\4defc79915cf4f7
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=E:\program_langeage\java_SE_jdk
+PATH=E:\program_langeage\cuda\Development\bin;E:\program_langeage\cuda\Development\libnvvp;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;E:\Developer_Tools\Maven\apache-maven-3.6.1\bin;E:\GIT\Git\bin;E:\program_langeage\java_SE_jdk\bin;E:\Developer_Tools\Gradle\gradle-6.0.1\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\program_langeage\node.js\modules;E:\program_langeage\node.js\runtime\;C:\Program Files\NVIDIA Corporation\Nsight Compute 2019.5.0\;E:\Program Files (x86)\IncrediBuild;E:\program_langeage\javafx-sdk-11.0.2\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\台式大主机\AppData\Local\Microsoft\WindowsApps;E:\Developer_Tools\VSCode\Microsoft VS Code\bin;C:\Users\台式大主机\AppData\Roaming\npm;C:\Users\台式大主机\AppData\Local\Programs\Microsoft VS Code\bin
+USERNAME=台式大主机
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 18362 (10.0.18362.778)
+
+CPU:total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 158 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16720000k(4127368k free), swap 37792676k(5718672k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.212-b04) for windows-amd64 JRE (1.8.0_212-3-redhat-b04), built on Apr 23 2019 14:38:46 by "build" with MS VC++ 10.0 (VS2010)
+
+time: Sat May 09 08:19:59 2020
+timezone: 中国标准时间
+elapsed time: 2 seconds (0d 0h 0m 2s)
+
