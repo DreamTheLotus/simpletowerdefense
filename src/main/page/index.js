@@ -53,6 +53,8 @@ create_monster.onclick = function() {
 	var a = new monster()
 	a.all_to_json('{"stepX":3,"stepY":5,"next_X":2,"next_Y":7,"orientation":78}')
 	console.log(a.jsonToString())
+	monster_list.set(parseInt(Math.random()*65535),'{"stepX":0,"stepY":0,"next_X":0,"next_Y":0,"orientation":0}')
+	console.log(monster_list)
 	var move_thread = new monster_thread();
 	move_thread.start()
 	move_thread.addThread();

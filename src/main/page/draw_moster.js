@@ -5,13 +5,15 @@ var stepY = 0
 var next_X = 0
 var next_Y = 0
 var orientation = 0
+var monster_list = new Map()
 
 var monster = function() {
-	var stepX = 0
-	var stepY = 0
-	var next_X = 0
-	var next_Y = 0
-	var orientation = 0
+	var stepX = 0//当前所在的x坐标
+	var stepY = 0//当前所在的y坐标
+	var next_X = 0//下一步的x坐标
+	var next_Y = 0//下一步的y坐标
+	var orientation = 0//朝向
+	var deviation = 0//偏移量
 	var json_data
 	this.all_to_json = function(data) {
 		try{
@@ -21,14 +23,19 @@ var monster = function() {
 			next_X = json_data.next_X
 			next_Y = json_data.next_Y
 			orientation = json_data.orientation
+			deviation = json_data.deviation
 		}catch(e){
 			throw "RunTimeException at all_to_json"
 		}
 	}
 	this.jsonToString = function() {
 		return '{"stepX":' + stepX + ',"stepY":' + stepY + ',"next_X":' + next_X + ',"next_Y":' + next_Y +
-			',"orientation":' + orientation + '}'
+			',"orientation":' + orientation + ',"deviation":' + deviation + '}'
 	}
+}
+
+function load_monster_list() {
+	
 }
 
 function normal_monster_step(run_times) {
